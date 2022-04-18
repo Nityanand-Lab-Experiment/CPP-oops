@@ -11,7 +11,7 @@ class shape{
 			width = w;
 		}
 		void setHeight(int h){
-			heigth = h;
+			height = h;
 		}
 		
 	protected:
@@ -21,20 +21,40 @@ class shape{
 
 };
 
+class square: public shape{
+	public:
+		int areaOfSquare(){
+			return (length * width);
+		}
+		int volumeOfSquare(){
+			return (length * width * height);
+		}
+};
+/*
+class volume: public shape{
+	public:
+		int volumeOf(){
+			return (length * width);
+		}
+};
+*/
 
 int main()
 {
-	box Box;
-	Box.l=10;
-	Box.b=10;
-	Box.h=10;
+	square Squ;
+	
+	Squ.setLength(10);
+	Squ.setWidth(10);
+	Squ.setHeight(10);
 
-	int vol;
+	int area, vol;
 
-	vol = Box.l * Box.b * Box.h;
+	area = Squ.areaOfSquare();
+	cout<<"Area of box: "<<area<<endl;
 
+	vol = Squ.volumeOfSquare();
+	cout<<"Volume of box: "<<vol<<endl;
 
-        cout<<"volume of box: "<<vol<<endl;
-        return 0;
+    return 0;
 }
 
